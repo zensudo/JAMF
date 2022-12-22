@@ -3,13 +3,13 @@
 # VERSION: 1.0
 # DESCRIPTION: Script calls JAMF-API to get the year of production from device informations.
 
-# Define API User Credentials
+# Set API user credentials
 API_User=$(echo 'USER:PASSWORD')
 
-# Get the Serialnumber of the macOS Device
+# Get the serialnumber of the macOS device
 Mac_Serial=$(system_profiler SPHardwareDataType | awk '/Serial/ {print $4}')
 
-# Get url from JAMF MDM Server
+# Get url from JAMF MDM server
 MDM_url=$(defaults read /Library/Preferences/com.jamfsoftware.jamf.plist jss_url)
 
 # User JAMF-API to get the year of device production
